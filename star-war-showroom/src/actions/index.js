@@ -7,7 +7,11 @@ export const getPeopleData = pageList => {
     const { people } = getState();
     const peopleIds = [];
     // 1. create a list of people id needs to be shown based on page id, zero based index
-    for (let i = pageList * 10 + 1; i <= pageList * 10 + NUM_PER_PAGE; i++) {
+    for (
+      let i = pageList * NUM_PER_PAGE + 1;
+      i <= pageList * NUM_PER_PAGE + NUM_PER_PAGE;
+      i++
+    ) {
       peopleIds.push(i);
     }
     /* 2. separate the ids for that page into two groups
@@ -34,16 +38,20 @@ export const getPeopleData = pageList => {
       newIds.map(function(id) {
         return fetchService(`https://swapi.co/api/people/${id}/`);
       }),
-    ).then(payload => {
-      // add id info to each people data then saves in store
-      newIds.forEach((id, index) => (payload[index].id = id));
+    )
+      .then(payload => {
+        // add id info to each people data then saves in store
+        newIds.forEach((id, index) => (payload[index].id = id));
 
-      // 5. dispatch the newly fetched data along with the data already in store
-      dispatch({
-        type: actionTypes.PERSON_DATA_RECEIVED,
-        payload: payload.concat(savedPayload),
+        // 5. dispatch the newly fetched data along with the data already in store
+        dispatch({
+          type: actionTypes.PERSON_DATA_RECEIVED,
+          payload: payload.concat(savedPayload),
+        });
+      })
+      .catch(e => {
+        console.error("Oops something is wrong!", e);
       });
-    });
   };
 };
 

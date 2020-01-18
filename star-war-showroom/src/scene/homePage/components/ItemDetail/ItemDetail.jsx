@@ -14,14 +14,21 @@ export default function ItemDetail({ personData, filmData }) {
           {personData.films &&
             personData.films.map(film => {
               if (filmData[film]) {
-                return <li key={film.episode_id}>{filmData[film].title}</li>;
+                return (
+                  <li key={filmData[film].episode_id}>
+                    {filmData[film].title}
+                  </li>
+                );
               }
-              return "";
+              return null;
             })}
         </ul>
       ) : (
         <p>
-          WAIT A SEC, we are fetching movies for you! <span role="img">🎬</span>
+          WAIT A SEC, we are fetching movies for you!{" "}
+          <span role="img" aria-label="movie">
+            🎬
+          </span>
         </p>
       )}
     </div>

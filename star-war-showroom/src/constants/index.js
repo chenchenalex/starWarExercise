@@ -1,11 +1,6 @@
 export const INITIAL_STATES = {
-  people: {
-    2: {
-      name: "alex",
-      id: 2,
-    },
-  },
+  people: {},
   films: {},
 };
 
-export const NUM_PER_PAGE = 2;
+export const NUM_PER_PAGE = 10;

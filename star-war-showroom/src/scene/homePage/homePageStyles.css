@@ -1,0 +1,10 @@
+.pagination-block {
+  width: 600px;
+  margin: 20px auto;
+  text-align: right;
+}
+
+.pagination-block button {
+  border-radius: 5px;
+  margin-left: 10px;
+}
