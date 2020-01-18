@@ -8,3 +8,14 @@
   border-radius: 5px;
   margin-left: 10px;
 }
+
+body {
+  background-color: black;
+  color: white;
+}
+
+audio {
+  position: absolute;
+  right: -260px;
+  top: 50px;
+}
