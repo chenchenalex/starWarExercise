@@ -1,0 +1,19 @@
+table {
+  margin: 0 auto;
+  width: 600px;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 5px;
+}
+
+tr:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
