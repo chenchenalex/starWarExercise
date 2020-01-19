@@ -5,6 +5,7 @@ import HomePageStyles from "./homePageStyles.css";
 import { getPeopleData, getFilms } from "../../actions";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import bgm from "../../assets/star-war.mp3";
+import logo from "../../assets/Star_Wars_Logo.png";
 
 class SWTable extends Component {
   state = {
@@ -71,6 +72,8 @@ class SWTable extends Component {
           <source src={bgm} type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
+
+        <img src={logo} className="logo" alt="star-war" />
       </div>
     );
   }
